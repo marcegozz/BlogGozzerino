@@ -7,8 +7,9 @@
 </br>
 
 <form method="post">
-
+    {% csrf_token %}
     {{ form.as_p }}
+
     <button class="btn btn-secondary">Postear</button>
 
 </form>
