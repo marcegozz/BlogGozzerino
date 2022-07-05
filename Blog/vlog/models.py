@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class Post(models.Model):
     titulo = models.CharField(max_length=255)
-    etiqueta = models.CharField(max_length=255, default="Blogsito")
+    etiqueta = models.CharField(max_length=255)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     cuerpo = models.TextField()
 
