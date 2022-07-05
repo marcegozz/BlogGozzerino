@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-def home(request):
-    return render(request, 'home.html', {})
+class HomeView(ListView):
+    model = Post.model
+    template_name: 'home.htlm'

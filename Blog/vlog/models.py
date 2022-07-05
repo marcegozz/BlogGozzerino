@@ -8,6 +8,6 @@ class Post(models.Model):
 
 #Permite que se lea claramente el titulo y el autor claramente en la pagina de Admin
     def __str__(self):
-        return self.titulo + ' | ' + self.autor
+        return self.titulo + ' | ' + str(self.autor)
 
 
