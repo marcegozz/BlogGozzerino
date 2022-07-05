@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 
 class HomeView(ListView):
@@ -9,3 +9,8 @@ class HomeView(ListView):
 class ArticuloDetallado(DetailView):
     model = Post
     template_name = 'articulo.html'
+
+class AgregarPost(CreateView):
+    model = Post
+    template_name = 'postear.html'
+    fields = '__all__'
