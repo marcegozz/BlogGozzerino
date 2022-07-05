@@ -6,12 +6,18 @@
 <h1>Agregar Post</h1>
 </br>
 <div class="mb-3">
-    <form method="post">
+<form method="post">
+    <div class="mb-3">
+
         {% csrf_token %}
         {{ form.as_p }}
-
+    </div>
         <button class="btn btn-secondary">Postear</button>
+</form>
 </div>
+
+
+
 
 
 {% endblock %}
