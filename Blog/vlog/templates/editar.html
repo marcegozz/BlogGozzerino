@@ -2,7 +2,7 @@
 {% block title %}Editar Post{% endblock%}
 {% block content %}
     
-
+{% if user.is_authenticated %}
 <h1>Edita el Post</h1>
 </br>
 
@@ -15,9 +15,11 @@
         <button class="btn btn-secondary">Editar</button>
 </form>
 
+{% else% }
 
+No deberías estar aca...
 
-
+{% endif %}
 
 
 {% endblock %}

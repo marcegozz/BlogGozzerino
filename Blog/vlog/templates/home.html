@@ -9,10 +9,12 @@
     <li><a href="{% url 'ArticuloDetallado' post.pk %}">{{ post.titulo }}</a> - 
         {{ post.autor.first_name }} 
         {{ post.autor.last_name }} - {{ post.fecha }}</br>
-        {{ post.cuerpo }}</li>
+        {{ post.cuerpo|slice:":200"}}</li>
+
+    {% if user.is_authenticated %}    
     <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
     <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
-    
+    {% endif %}
 
 
 {% endfor %}

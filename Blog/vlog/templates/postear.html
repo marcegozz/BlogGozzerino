@@ -2,6 +2,7 @@
 {% block title %}Agregar Post{% endblock%}
 {% block content %}
     
+{% if user.is_authenticated %}
 
 <h1>Agregar Post</h1>
 </br>
@@ -15,9 +16,10 @@
         <button class="btn btn-secondary">Postear</button>
 </form>
 
+{% else %}
 
+¿Cómo entrastre aca?
 
-
-
+{% endif %}
 
 {% endblock %}

@@ -15,7 +15,12 @@
 
 <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver al Inicio</a></br>
+
+{% if user.is_authenticated %}
+
 <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
 <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
+
+{% endif %}
 
 {% endblock %}

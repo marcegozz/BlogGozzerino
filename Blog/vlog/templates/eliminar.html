@@ -2,6 +2,7 @@
 {% block title %}Eliminar Post{% endblock%}
 {% block content %}
     
+{% if user.is_authenticated %}
 
 <h1>Eliminar Post</h1>
 <h2>{{ post.titulo }}</h2>
@@ -13,9 +14,10 @@
         <button class="btn btn-secondary">Eliminar Post</button>
 </form>
 
+{% else %}
 
+Error Error Error
 
-
-
+{% endif %}
 
 {% endblock %}
