@@ -13,6 +13,7 @@ class Post(models.Model):
         return self.titulo + ' | ' + str(self.autor)
     
     def get_absolute_url(self):
-        return reverse('ArticuloDetallado', args=(str(self.id)))
+        #return reverse('ArticuloDetallado', args=(str(self.id)))
+        return reverse('home')
 
 

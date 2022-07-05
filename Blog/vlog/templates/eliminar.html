@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Eliminar Post{% endblock%}
+{% block content %}
+    
+
+<h1>Eliminar Post</h1>
+<h2>{{ post.titulo }}</h2>
+</br>
+<form method="post">
+    <div class="mb-3">
+        {% csrf_token %}
+    </div>
+        <button class="btn btn-secondary">Eliminar Post</button>
+</form>
+
+
+
+
+
+
+{% endblock %}

@@ -10,6 +10,7 @@
         {{ post.autor.last_name }}</br>
     {{ post.cuerpo }}</li>
     <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
+    <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
     
 
 
