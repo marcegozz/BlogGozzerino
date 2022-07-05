@@ -7,6 +7,7 @@ from .forms import PostForm, EditarForm
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
+    ordering = ['-fecha']
 
 class ArticuloDetallado(DetailView):
     model = Post

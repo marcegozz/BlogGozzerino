@@ -5,14 +5,17 @@
 
 <h1>{{ post.titulo }}</h1> 
 
-<small>Por: {{ post.autor.first_name }} 
-{{ post.autor.last_name }}</small> </br>
+<small>
+    Por: {{ post.autor.first_name }} 
+    {{ post.autor.last_name }}
+    {{ post.fecha }}
+</small> </br>
 
 {{ post.cuerpo }}
 
 <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver al Inicio</a></br>
 <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
-<small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
+<small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
 
 {% endblock %}
