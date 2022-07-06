@@ -14,6 +14,7 @@ class Categoria(models.Model):
 
 class Post(models.Model):
     titulo = models.CharField(max_length=255)
+    header_img = models.ImageField(upload_to="imagenes/",blank=True, null=True,)
     etiqueta = models.CharField(max_length=255)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     cuerpo = RichTextField(blank=True, null=True)

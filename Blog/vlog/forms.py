@@ -12,7 +12,7 @@ for item in opciones:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('titulo', 'etiqueta', 'autor', 'categoria', 'detalle', 'cuerpo')
+        fields = ('titulo', 'etiqueta', 'autor', 'categoria', 'detalle', 'cuerpo', 'header_img')
         widgets = {
             'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
             'etiqueta' : forms.TextInput(attrs={'class': 'form-control'}),

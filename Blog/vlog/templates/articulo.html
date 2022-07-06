@@ -3,18 +3,31 @@
 
 {% block content %}
 
+<br/><br/>
+
 <h1>{{ post.titulo }}</h1> 
 
 <small>
     Por: {{ post.autor.first_name }} 
     {{ post.autor.last_name }}
     {{ post.fecha }}
+
+    <br/><br/>
+
 </small> </br>
+
+{% if post.header_img %}
+    <img src="{{ post.header_img.url }}">
+{% endif %}
+
+<br/><br/>
 
 {{ post.cuerpo | safe }}
 
 <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver al Inicio</a></br>
+
+<br/><br/>
 
 {% if user.is_authenticated %}
 
@@ -23,6 +36,8 @@
     {% if user.id == post.autor.id %}
         <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
         <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
+
+        <br/><br/><br/><br/><br/><br/>
     {% endif %}
 
 {% endif %}
