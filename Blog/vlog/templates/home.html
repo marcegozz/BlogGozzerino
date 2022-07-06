@@ -14,10 +14,17 @@
         {{ post.autor.last_name }} - {{ post.fecha }}</br>
         {{ post.cuerpo|slice:":200"}}</li>
 
-    {% if user.is_authenticated %}    
+    {% if user.is_authenticated %}   
+        {% if user.id == post.autor.id %}
+
+
     <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
     <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
+
+        {% endif %}
+
     {% endif %}
+
 
 
 {% endfor %}

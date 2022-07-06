@@ -4,19 +4,23 @@
     
 {% if user.is_authenticated %}
 
-<h1>Eliminar Post</h1>
-<h2>{{ post.titulo }}</h2>
-</br>
-<form method="post">
-    <div class="mb-3">
-        {% csrf_token %}
-    </div>
-        <button class="btn btn-secondary">Eliminar Post</button>
-</form>
+    {% if user.id == post.autor.id %}
 
-{% else %}
+        <h1>Eliminar Post</h1>
+        <h2>{{ post.titulo }}</h2>
+        </br>
+        <form method="post">
+            <div class="mb-3">
+                {% csrf_token %}
+            </div>
+                <button class="btn btn-secondary">Eliminar Post</button>
+        </form>
 
-Error Error Error
+        {% else %}
+
+        Error Error Error
+
+    {% endif %}
 
 {% endif %}
 

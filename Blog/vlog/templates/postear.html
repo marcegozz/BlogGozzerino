@@ -6,15 +6,19 @@
 
 <h1>Agregar Post</h1>
 </br>
-
-<form method="post">
     <div class="mb-3">
-
-        {% csrf_token %}
-        {{ form.as_p }}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Postear</button>
     </div>
-        <button class="btn btn-secondary">Postear</button>
-</form>
+
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById("kiki").value =
+            name;
+    </script>
+
 
 {% else %}
 

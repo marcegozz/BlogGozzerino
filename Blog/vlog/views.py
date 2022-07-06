@@ -19,6 +19,12 @@ class ArticuloDetallado(DetailView):
     model = Post
     template_name = 'articulo.html'
 
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Categoria.objects.all()
+        context = super(ArticuloDetallado, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
 class AgregarPost(CreateView):
     model = Post
     form_class = PostForm

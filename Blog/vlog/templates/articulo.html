@@ -18,8 +18,12 @@
 
 {% if user.is_authenticated %}
 
-<small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
-<small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
+<!-- Comprobador de sesión -->
+
+    {% if user.id == post.autor.id %}
+        <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
+        <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
+    {% endif %}
 
 {% endif %}
 

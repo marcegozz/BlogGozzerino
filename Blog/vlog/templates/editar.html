@@ -3,21 +3,26 @@
 {% block content %}
     
 {% if user.is_authenticated %}
-<h1>Edita el Post</h1>
-</br>
 
-<form method="post">
-    <div class="mb-3">
+    {% if user.id == post.autor.id %}
 
-        {% csrf_token %}
-        {{ form.as_p }}
-    </div>
-        <button class="btn btn-secondary">Editar</button>
-</form>
+        <h1>Edita el Post</h1>
+        </br>
 
-{% else %}
+        <form method="post">
+            <div class="mb-3">
 
-No deberías estar aca...
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+                <button class="btn btn-secondary">Editar</button>
+        </form>
+
+        {% else %}
+
+        Solo el creador de este Post puede editarlo.
+
+    {% endif %}
 
 {% endif %}
 

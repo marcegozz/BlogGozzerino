@@ -16,7 +16,8 @@ class PostForm(forms.ModelForm):
         widgets = {
             'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
             'etiqueta' : forms.TextInput(attrs={'class': 'form-control'}),
-            'autor' : forms.Select(attrs={'class': 'form-control'}),
+            'autor' : forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'kiki', 'type':'hidden'}), #Kiki es el nombre de mi gata :)
+            #'autor' : forms.Select(attrs={'class': 'form-control'}),
             'categoria' : forms.Select(choices=listaOpciones, attrs={'class': 'form-control'}),
             'cuerpo' : forms.Textarea(attrs={'class': 'form-control'}),
         }
