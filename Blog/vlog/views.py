@@ -7,7 +7,7 @@ from .forms import PostForm, EditarForm
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
-    ordering = ['fecha']
+    ordering = ['-fecha']
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Categoria.objects.all()

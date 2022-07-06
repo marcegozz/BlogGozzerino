@@ -8,9 +8,11 @@
 </br>
     <div class="mb-3">
         <form method="post" enctype="multipart/form-data">
+
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p }}
+            
             <button class="btn btn-secondary">Postear</button>
     </div>
 
