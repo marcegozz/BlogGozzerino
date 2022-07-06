@@ -16,10 +16,40 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+
+
+              <!--        SEPARACION    (NavMenu)                 -->
+
+
+              {% if cat_menu %}
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                  {% for item in cat_menu %}
+                  
+                  <li><a class="dropdown-item" href="{% url 'categoria' item %}"> {{item}} </a></li>
+                  {% endfor %}
+
+                </ul>
+              </li>
+
+              {% endif %}
+
+              <!--        SEPARACION    (NavMenu)                 -->
+
               {% if user.is_authenticated %}
               
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'AgregarPost' %}">Agregar Post</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'agregarcategoria' %}">Agregar Categoria</a>
               </li>
 
               <li class="nav-item">

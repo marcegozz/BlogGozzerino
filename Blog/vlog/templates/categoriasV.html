@@ -2,26 +2,31 @@
 
 {% block content %}
     
+{% if categoria_posts %}
 
-<h1>Post</h1>
+<h1>{{ cat }}</h1>
+
 <ul>
-{% for post in object_list %}
+{% for post in categoria_posts %}
+
     <li><a href="{% url 'ArticuloDetallado' post.pk %}">{{ post.titulo }}</a> 
-        - 
-        
-        <a href="{% url 'categoria' post.pk %}">{{ post.categoria }}</a> -
-        {{ post.autor.first_name }} 
-        {{ post.autor.last_name }} - {{ post.fecha }}</br>
-        {{ post.cuerpo|slice:":200"}}</li>
+    - 
+    {{ post.autor.first_name }} 
+    {{ post.autor.last_name }} - {{ post.fecha }}</br>
+    {{ post.cuerpo|slice:":200"}}</li>
 
     {% if user.is_authenticated %}    
     <small><a href="{% url 'EditarPost' post.pk %}">Editar</a></small>
     <small><a href="{% url 'EliminarPost' post.pk %}">Eliminar</a></small>
+
     {% endif %}
-
-
 {% endfor %}
+
+{% else %}
+
+Lo lamento, esa categoría no existe.
+
+{% endif %}
+
 </ul>
-
-
 {% endblock %}

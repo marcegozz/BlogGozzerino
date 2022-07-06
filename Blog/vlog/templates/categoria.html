@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Editar Post{% endblock%}
+{% block title %}Agregar Categoria{% endblock%}
 {% block content %}
     
 {% if user.is_authenticated %}
-<h1>Edita el Post</h1>
+
+<h1>Agregar Categoría</h1>
 </br>
 
 <form method="post">
@@ -12,14 +13,13 @@
         {% csrf_token %}
         {{ form.as_p }}
     </div>
-        <button class="btn btn-secondary">Editar</button>
+        <button class="btn btn-secondary">Añadir Categoria</button>
 </form>
 
 {% else %}
 
-No deberías estar aca...
+Hmmm... ¿Te conozco?
 
 {% endif %}
-
 
 {% endblock %}
