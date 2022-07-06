@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
+from ckeditor.fields import RichTextField
 
 
 class Categoria(models.Model):
@@ -15,9 +16,10 @@ class Post(models.Model):
     titulo = models.CharField(max_length=255)
     etiqueta = models.CharField(max_length=255)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
-    cuerpo = models.TextField()
+    cuerpo = RichTextField(blank=True, null=True)
     fecha = models.DateField(auto_now_add=True)
     categoria = models.CharField(max_length=255, default='Sin Categorizar')
+    detalle = models.CharField(max_length=255)
 
 
 

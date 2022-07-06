@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vlog',
     'miembros',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

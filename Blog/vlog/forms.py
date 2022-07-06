@@ -12,23 +12,24 @@ for item in opciones:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('titulo', 'etiqueta', 'autor', 'categoria', 'cuerpo')
+        fields = ('titulo', 'etiqueta', 'autor', 'categoria', 'detalle', 'cuerpo')
         widgets = {
             'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
             'etiqueta' : forms.TextInput(attrs={'class': 'form-control'}),
             'autor' : forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'kiki', 'type':'hidden'}), #Kiki es el nombre de mi gata :)
-            #'autor' : forms.Select(attrs={'class': 'form-control'}),
             'categoria' : forms.Select(choices=listaOpciones, attrs={'class': 'form-control'}),
+            'detalle' : forms.Textarea(attrs={'class': 'form-control', 'placeholder':'Escribe una breve descripción de tu Post.'}),
             'cuerpo' : forms.Textarea(attrs={'class': 'form-control'}),
         }
 
 class EditarForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('titulo', 'etiqueta', 'cuerpo')
+        fields = ('titulo', 'etiqueta', 'detalle', 'cuerpo')
         widgets = {
             'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
             'etiqueta' : forms.TextInput(attrs={'class': 'form-control'}),
+            'detalle' : forms.Textarea(attrs={'class': 'form-control'}),
             'cuerpo' : forms.Textarea(attrs={'class': 'form-control'}),
         }
             

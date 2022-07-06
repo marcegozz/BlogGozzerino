@@ -3,7 +3,7 @@
 {% block content %}
     
 
-<h1>Post</h1>
+<h1>Inicio (─‿‿─)</h1>
 <ul>
 {% for post in object_list %}
     <li><a href="{% url 'ArticuloDetallado' post.pk %}">{{ post.titulo }}</a> 
@@ -12,7 +12,8 @@
         <a href="{% url 'categoria' post.pk %}">{{ post.categoria }}</a> -
         {{ post.autor.first_name }} 
         {{ post.autor.last_name }} - {{ post.fecha }}</br>
-        {{ post.cuerpo|slice:":200"}}</li>
+        {{ post.detalle }}</li>
+        
 
     {% if user.is_authenticated %}   
         {% if user.id == post.autor.id %}
